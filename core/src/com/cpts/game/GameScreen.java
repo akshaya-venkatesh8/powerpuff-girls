@@ -89,7 +89,7 @@ class GameScreen implements Screen {
         backgroundMaxScrollingSpeed = (float) (WORLD_HEIGHT) / 4;
 
         //initialize texture regions
-        playerShipTextureRegion = textureAtlas.findRegion("playerShip2_blue");
+        playerShipTextureRegion = textureAtlas.findRegion("powerpuff1");
         enemyShipTextureRegion = textureAtlas.findRegion("enemyRed3");
         playerShieldTextureRegion = textureAtlas.findRegion("shield2");
         enemyShieldTextureRegion = textureAtlas.findRegion("shield1");
@@ -102,7 +102,7 @@ class GameScreen implements Screen {
 
         //set up game objects
         playerShip = new PlayerShip(WORLD_WIDTH / 2, WORLD_HEIGHT / 4,
-                10, 10,
+                30, 12,
                 48, 3,
                 0.4f, 4, 45, 0.5f,
                 playerShipTextureRegion, playerShieldTextureRegion, playerLaserTextureRegion);
