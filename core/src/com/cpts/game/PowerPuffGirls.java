@@ -4,7 +4,7 @@ import com.badlogic.gdx.Game;
 
 import java.util.Random;
 
-public class SpaceShooterGame extends Game {
+public class PowerPuffGirls extends Game {
 
     GameScreen gameScreen;
 
