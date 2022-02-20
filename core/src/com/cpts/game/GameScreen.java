@@ -179,6 +179,7 @@ class GameScreen implements Screen {
         updateAndRenderHUD();
 
         batch.end();
+//        Gdx.app.exit();
     }
 
     private void updateAndRenderHUD() {
@@ -218,6 +219,27 @@ class GameScreen implements Screen {
         rightLimit = WORLD_WIDTH - playerShip.boundingBox.x - playerShip.boundingBox.width;
         upLimit = (float) WORLD_HEIGHT / 2 - playerShip.boundingBox.y - playerShip.boundingBox.height;
 
+        if (Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)){
+        	
+        
+//        	actualSpeed *= playerShip.fastSpeed;
+//            playerShip.translate(0f, actualSpeed);
+            
+            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && rightLimit > 0) {
+                playerShip.translate(Math.min(playerShip.movementSpeed * deltaTime, rightLimit), 0f);
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.UP) && upLimit > 0) {
+                playerShip.translate(0f, Math.min(playerShip.movementSpeed * deltaTime, upLimit));
+            }
+
+            if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && leftLimit < 0) {
+                playerShip.translate(Math.max(-playerShip.movementSpeed * deltaTime, leftLimit), 0f);
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && downLimit < 0) {
+                playerShip.translate(0f, Math.max(-playerShip.movementSpeed * deltaTime, downLimit));
+            }
+
+        }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && rightLimit > 0) {
             playerShip.translate(Math.min(playerShip.movementSpeed * deltaTime, rightLimit), 0f);
         }
@@ -231,6 +253,7 @@ class GameScreen implements Screen {
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && downLimit < 0) {
             playerShip.translate(0f, Math.max(-playerShip.movementSpeed * deltaTime, downLimit));
         }
+        
 
         //touch input (also mouse)
         if (Gdx.input.isTouched()) {
