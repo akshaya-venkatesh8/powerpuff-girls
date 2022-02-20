@@ -1,3 +1,3 @@
 # Powerpuff girls
-A shooting game with powerpuff girls vs mojo jojo built with Java and libGDX
+A shooting game with *Powerpuff Girls* vs *Mojo Jojo* built with Java and libGDX
 
